@@ -453,6 +453,7 @@ function getMediasoupWorker()
  */
 async function getOrCreateRoom({ roomId })
 {
+try{
 	let room = rooms.get(roomId);
 
 	// If the Room does not exist create a new one.
@@ -469,4 +470,7 @@ async function getOrCreateRoom({ roomId })
 	}
 
 	return room;
+} catch(error) {
+	console.log('Errpr Log Ours', error)
+}
 }
